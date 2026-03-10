@@ -28,5 +28,5 @@ Open `http://localhost:3002`.
 - `GET /api/metrics?days=7`
 - `POST /api/events/simulate`
 
-## Why this helps freelance profile
+## Why this helps my profile
 Shows product-style dashboard skills frequently requested by remote SaaS teams.

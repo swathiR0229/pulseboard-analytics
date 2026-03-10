@@ -1,0 +1,16 @@
+{
+  "name": "project3-analytics-dashboard",
+  "version": "1.0.0",
+  "description": "Analytics dashboard with API-backed KPI cards and trend charts.",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "dev": "node server.js"
+  },
+  "keywords": ["dashboard", "analytics", "nodejs", "portfolio"],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^5.2.1"
+  }
+}

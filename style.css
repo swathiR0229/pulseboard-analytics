@@ -1,0 +1,109 @@
+:root {
+  --bg: #f2f5ff;
+  --card: #ffffff;
+  --ink: #151a2f;
+  --muted: #5f6789;
+  --primary: #2056f8;
+  --line: #dbe3ff;
+  --error: #b31939;
+}
+
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  font-family: "Manrope", sans-serif;
+  color: var(--ink);
+  background:
+    radial-gradient(circle at 90% 0%, #d9e3ff 0%, transparent 40%),
+    var(--bg);
+}
+
+.container { width: min(1120px, 94vw); margin: 0 auto; }
+
+header {
+  border-bottom: 1px solid var(--line);
+  background: rgba(242, 245, 255, 0.88);
+  backdrop-filter: blur(8px);
+  position: sticky;
+  top: 0;
+}
+
+.header-row {
+  min-height: 76px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+h1,h2 { font-family: "Sora", sans-serif; }
+
+.controls {
+  display: flex;
+  gap: 0.7rem;
+  align-items: end;
+}
+
+select, button {
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  padding: 0.5rem 0.72rem;
+  font: inherit;
+}
+
+button {
+  background: var(--primary);
+  border-color: var(--primary);
+  color: #fff;
+  cursor: pointer;
+}
+
+main { padding: 1rem 0 2rem; }
+
+.kpis {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 0.8rem;
+}
+
+.kpi, .chart-card, .table-card {
+  background: var(--card);
+  border: 1px solid var(--line);
+  border-radius: 14px;
+  padding: 1rem;
+}
+
+.kpi p {
+  font-size: 1.5rem;
+  font-weight: 700;
+  margin: 0.2rem 0 0;
+}
+
+.chart-card { margin-top: 0.9rem; }
+
+canvas {
+  width: 100%;
+  height: auto;
+  background: #fcfdff;
+  border-radius: 8px;
+  border: 1px solid #edf1ff;
+}
+
+.status { min-height: 1.2rem; color: var(--muted); }
+.status.error { color: var(--error); }
+
+.table-card { margin-top: 0.9rem; }
+.table-wrap { overflow-x: auto; }
+
+table { width: 100%; border-collapse: collapse; }
+th, td { border-bottom: 1px solid #edf1ff; text-align: left; padding: 0.55rem; }
+
+@media (max-width: 920px) {
+  .kpis { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+}
+
+@media (max-width: 640px) {
+  .header-row { flex-direction: column; gap: 0.6rem; padding: 0.7rem 0; }
+  .controls { width: 100%; justify-content: space-between; }
+  .kpis { grid-template-columns: 1fr; }
+}
